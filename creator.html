@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator - Rujevo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #111827, #1f2937);
+            color: white;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .creator-section {
+            padding: 8rem 1.5rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .creator-header {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .creator-flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .creator-left-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .creator-flex-container {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+                justify-content: center;
+                gap: 4rem;
+            }
+
+            .creator-section {
+                text-align: left;
+            }
+
+            .creator-image {
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .creator-content {
+                margin: 0;
+                text-align: left;
+            }
+
+            .creator-left-column {
+                flex-shrink: 0;
+            }
+        }
+
+        .creator-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .creator-content {
+            max-width: 600px;
+            background-color: rgba(31, 41, 55, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .creator-title {
+            font-size: 1.5rem;
+            color: #a78bfa;
+            margin-bottom: 1rem;
+        }
+
+        .creator-bio {
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 1023px) {
+            .creator-left-column .social-links {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .creator-content .social-links {
+                display: none;
+            }
+            .creator-left-column .social-links {
+                display: flex;
+            }
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: opacity 0.3s;
+        }
+
+        .social-link:hover {
+            opacity: 0.9;
+        }
+
+        .linkedin-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #d1d5db;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(31, 41, 55, 0.5);
+            font-size: 24px;
+            margin-top: -2%;
+            
+        
+        }
+
+        .back-button:hover {
+            color: #a78bfa;
+            background: rgba(31, 41, 55, 0.8);
+            transform: translateX(-5px);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Rujevo</a>
+        </div>
+    </nav>
+
+    <section class="creator-section">
+        <a href="index.html" class="back-button">←</a>
+        
+        <h1 class="creator-header fade-in">Founder</h1>
+        
+        <div class="creator-flex-container">
+            <div class="creator-left-column fade-in">
+                <div class="creator-image">
+                    <img src="photo.jpg" alt="Venkat Akhil Lakkapragada" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+                
+                <!-- Desktop LinkedIn button -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/venkat-akhil-lakkapragada-63835611a/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="linkedin-icon" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+            
+            <div class="creator-content fade-in">
+                <h2 class="creator-title">Venkat Akhil Lakkapragada</h2>
+                <p class="creator-bio">
+                    Founder & CEO of Rujevo<br><br>
+                    Hey! I'm Akhil, an 18-year-old from Hyderabad who's deeply passionate about technology 
+                    and innovation. When I'm not coding or brainstorming new ideas, you'll find me exploring 
+                    the latest tech trends and thinking about how to make things better.<br><br>
+                    I created Rujevo because I believe in the power of technology to create meaningful change. 
+                    As a young entrepreneur, I'm excited to be building something that could make a real difference 
+                    in how we work and interact with technology.<br><br>
+                    Workofy is just the beginning - there are so many exciting possibilities ahead, and 
+                    I can't wait to bring more innovative ideas to life!
+                </p>
+                
+                <!-- Mobile LinkedIn button -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/venkat-akhil-lakkapragada-63835611a/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="linkedin-icon" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

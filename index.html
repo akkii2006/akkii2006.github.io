@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rujevo - Empowering the Future of Work and Technology</title>
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #111827, #1f2937);
+            color: white;
+            min-height: 100vh;
+            letter-spacing: -0.01em;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: linear-gradient(to right, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a78bfa;
+        }
+
+        .nav-about .mobile-text {
+            display: inline;
+        }
+
+        .nav-about .desktop-text {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-about .mobile-text {
+                display: none;
+            }
+            
+            .nav-about .desktop-text {
+                display: inline;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1.5rem 5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .hero p {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Common Section Styles */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* About Section */
+        .about {
+            background-color: rgba(31, 41, 55, 0.5);
+        }
+
+        .about-content {
+            max-width: 48rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #d1d5db;
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        /* Products Section */
+        .product-card {
+            background-color: rgba(31, 41, 55, 0.5);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 36rem;
+            margin: 0 auto;
+        }
+
+        .product-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #a78bfa;
+            margin-bottom: 1rem;
+        }
+
+        .product-card p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .button-outline {
+            background: #8b5cf6;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            color: #9ca3af;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .footer-info {
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            color: #a78bfa;
+        }
+
+        .linkedin-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <h1 class="nav-logo">Rujevo</h1>
+            <div class="nav-links">
+                <a href="creator.html" class="nav-about">
+                    <span class="mobile-text">About</span>
+                    <span class="desktop-text">About The Founder</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <h1>Empowering the Future</h1>
+        <p>Building innovative tech platforms that solve real-world problems</p>
+        <a href="#about" class="button">Learn More</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content fade-in">
+                <h2 class="section-title">About Rujevo</h2>
+                <p>At Rujevo, we are dedicated to building tech platforms that solve real-world problems, 
+                driving innovation across industries and empowering individuals and businesses alike.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Our Platforms</h2>
+            <div class="product-card fade-in">
+                <h3>Workofy</h3>
+                <p>A revolutionary platform connecting exceptional talent with outstanding opportunities.</p>
+                <a href="https://workofy.com" target="_blank" class="button button-outline">Explore Workofy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="about">
+        <div class="container">
+            <div class="about-content fade-in">
+                <h2 class="section-title">Technology & Innovation</h2>
+                <p>Our platforms leverage cutting-edge technologies such as AI, cloud computing, 
+                and mobile app development to deliver seamless user experiences and robust solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers">
+        <div class="container">
+            <div class="about-content fade-in">
+                <h2 class="section-title">Join Our Team</h2>
+                <p>We are always on the lookout for talented individuals to join our growing team at Rujevo. 
+                If you're passionate about technology and want to be part of our journey, reach out to us.</p>
+                <br>
+                <a href="mailto:contact@rujevo.com" class="button">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Rujevo. All rights reserved.</p>
+                <div class="footer-info">
+                    <p>📍 Kokapet, Hyderabad, TG</p>
+                    <p>✉️ contact@rujevo.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/rujevo" target="_blank" rel="noopener noreferrer">
+                        <svg class="linkedin-icon" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
