@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RujevoAI - Intelligent Solutions for Modern Workflow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: white;
+            min-height: 100vh;
+            letter-spacing: -0.01em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #818cf8;
+        }
+
+        .back-arrow {
+            font-size: 1.5rem;
+        }
+
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #818cf8, #4f46e5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .hero {
+            padding: 10rem 1.5rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #818cf8, #4f46e5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+            font-weight: 500;
+        }
+
+        section {
+            padding: 6rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #818cf8;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-card p {
+            color: #e2e8f0;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            background: linear-gradient(to right, #818cf8, #4f46e5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .coming-soon {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 4rem;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .coming-soon h3 {
+            color: #818cf8;
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .coming-soon p {
+            color: #e2e8f0;
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #6366f1, #4f46e5);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.3);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem 1.5rem;
+            background-color: rgba(15, 23, 42, 0.9);
+            border-top: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .footer-text {
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 5rem;
+            }
+            .hero p {
+                font-size: 1.5rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            padding: 2px;
+            background: linear-gradient(to right, #6366f1, #4f46e5);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="javascript:history.back()" class="back-button">
+                    <span class="back-arrow">←</span>
+                    <span>Back</span>
+                </a>
+                <h1 class="nav-logo">Rujevo AI</h1>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero fade-in">
+        <h1>Rujevo AI</h1>
+        <p>Powering the next generation of intelligent workflows with EvoMind technology</p>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Intelligent Solutions</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <h3>Smart Moderation</h3>
+                    <p>Advanced content moderation powered by EvoMind, ensuring safe and high-quality interactions.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <h3>Workflow Optimization</h3>
+                    <p>Intelligent algorithms that streamline and enhance the user experience.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <h3>Productivity Tools</h3>
+                    <p>Upcoming suite of AI-powered tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="evomind">
+        <div class="container">
+            <h2 class="section-title fade-in">Introducing EvoMind</h2>
+            <div class="coming-soon fade-in">
+                <h3>Coming Soon to Workofy Messages</h3>
+                <p>Experience the power of EvoMind, our proprietary AI model designed to revolutionize digital workflows.</p>
+                <div class="date-badge">Coming Soon</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2025 Rujevo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
