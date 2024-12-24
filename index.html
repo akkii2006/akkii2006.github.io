@@ -267,6 +267,13 @@
             animation: fadeIn 0.8s ease-out forwards;
         }
 
+        .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -296,7 +303,7 @@
     <!-- Hero Section -->
     <section class="hero fade-in">
         <h1>Empowering the Future</h1>
-        <p>Building innovative tech platforms that solve real-world problems</p>
+        <p>Building innovative tech products that solve real-world problems</p>
         <a href="#about" class="button">Learn More</a>
     </section>
 
@@ -305,7 +312,7 @@
         <div class="container">
             <div class="about-content fade-in">
                 <h2 class="section-title">About Rujevo</h2>
-                <p>At Rujevo, we are dedicated to building tech platforms that solve real-world problems, 
+                <p>At Rujevo, we are dedicated to building products that solve real-world problems, 
                 driving innovation across industries and empowering individuals and businesses alike.</p>
             </div>
         </div>
@@ -314,11 +321,18 @@
     <!-- Products Section -->
     <section id="products">
         <div class="container">
-            <h2 class="section-title">Our Platforms</h2>
-            <div class="product-card fade-in">
-                <h3>Workofy</h3>
-                <p>A revolutionary platform connecting exceptional talent with outstanding opportunities.</p>
-                <a href="https://www.workofy.com" target="_blank" class="button button-outline">Explore Workofy</a>
+            <h2 class="section-title">Our Products</h2>
+            <div class="features-grid">
+                <div class="product-card fade-in">
+                    <h3>Workofy</h3>
+                    <p>A revolutionary platform connecting exceptional talent with outstanding opportunities.</p>
+                    <a href="https://workofy.com" target="_blank" class="button button-outline">Explore Workofy</a>
+                </div>
+                <div class="product-card fade-in">
+                    <h3>RujevoAI</h3>
+                    <p>AI-powered tools for moderation, automation, and enhanced productivity.</p>
+                    <a href="ai.html" class="button button-outline">Explore RujevoAI</a>
+                </div>
             </div>
         </div>
     </section>
@@ -351,7 +365,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Rujevo. All rights reserved.</p>
+                <p>&copy; 2025 Rujevo. All rights reserved.</p>
                 <div class="footer-info">
                     <p>📍 Kokapet, Hyderabad, TG</p>
                     <p>✉️ contact@rujevo.com</p>
