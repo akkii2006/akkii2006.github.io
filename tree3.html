@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree(3) AI</title>
+    <link rel="stylesheet" href="tree3.css">
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<button class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+</button>
+    <div class="container">
+        <div class="hero">
+            <h1>Tree(3)</h1>
+            <p>Experience the future of conversation with our upcoming AI chatbot. Currently in development, Tree(3) represents our journey in AI development.</p>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Chat with Tree(3)</h2>
+                <p>Basic Chat Version 1.0</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hello! I'm Tree(3), a chatbot in development. No AI model yet, just simple pre-written responses for now! 🌱
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Upcoming Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Better Conversations</h3>
+                    <p>Improved casual chat capabilities</p>
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
+                <div class="feature-card">
+                    <h3>Basic Memory</h3>
+                    <p>Remember simple context from conversations</p>
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
+                <div class="feature-card">
+                    <h3>Fun Interactions</h3>
+                    <p>Simple games and interactive elements</p>
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2025 Rujevo. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            if (message) {
+                addMessage('user', message);
+                respondToMessage(message);
+                input.value = '';
+            }
+        }
+    
+        function addMessage(type, text) {
+            const messages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            messageDiv.textContent = text;
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+    
+        function respondToMessage(message) {
+            const lowerMessage = message.toLowerCase();
+            let response;
+    
+            // Akhil - First Priority Check
+            if (lowerMessage.includes('akhil') || lowerMessage.includes('founder') || lowerMessage.includes('ceo') || 
+                lowerMessage.includes('who created you') || lowerMessage.includes('who made you') || 
+                lowerMessage.includes('who owns rujevo') || lowerMessage.includes('tell me about akhil') || 
+                lowerMessage.includes('venkat') || lowerMessage.includes('lakkapragada') ||
+                lowerMessage.includes('creator') || lowerMessage.includes('who runs rujevo') || 
+                lowerMessage.includes('who started rujevo') || lowerMessage.includes('who began rujevo') ||
+                lowerMessage.includes('who founded') || lowerMessage.includes('who is the boss') ||
+                lowerMessage.includes('company owner') || lowerMessage.includes('about the founder') ||
+                lowerMessage.includes('about the ceo') || lowerMessage.includes('who leads') ||
+                lowerMessage.includes('tell me about your creator') || lowerMessage.includes('who built you') ||
+                lowerMessage.includes('who developed you') || lowerMessage.includes('who invented you') ||
+                lowerMessage.includes('your developer') || lowerMessage.includes('your inventor') ||
+                lowerMessage.includes('who is in charge') || lowerMessage.includes('head of rujevo') ||
+                lowerMessage.includes('rujevo leader') || lowerMessage.includes('who started all this')) {
+                const akhilResponses = [
+                    "Venkat Akhil Lakkapragada is the founder and CEO of Rujevo! He's been passionate about technology and coding since childhood. His personal mission is to ensure his existence makes a positive impact on his family and the world! 🚀",
+                    "Akhil is a tech enthusiast turned entrepreneur who's been coding since he was young! He founded Rujevo with the vision of solving real-world problems through innovation. His core value is making sure everything he does contributes positively to humanity! ✨",
+                    "Akhil has been fascinated by technology since childhood! Now, as Rujevo's founder, he's turning that passion into solutions that make the world better. He believes strongly in being a net positive force for his family and society! 💫"
+                ];
+                response = akhilResponses[Math.floor(Math.random() * akhilResponses.length)];
+            }
+            // Father
+            else if (lowerMessage.includes('harish') || lowerMessage.includes('father') || 
+                     lowerMessage.includes('akhil father') || lowerMessage.includes('akhils father') || 
+                     lowerMessage.includes("who is harish") || lowerMessage.includes("tell me about harish") || 
+                     lowerMessage.includes('dad') || lowerMessage.includes('akhils dad')) {
+                const harishResponses = [
+                    "Harish is Akhil's father! He's been incredibly supportive of Akhil's innovative journey and always encouraged thinking outside the box! 🌟",
+                    "That's Akhil's dad! He's been a great supporter of Akhil's vision and helped shape Rujevo's innovative spirit! ✨",
+                    "Harish is Akhil's father, who always encouraged him to pursue innovative ideas and think differently! 💫"
+                ];
+                response = harishResponses[Math.floor(Math.random() * harishResponses.length)];
+            }
+            // Mother
+            else if (lowerMessage.includes('jyotsna') || lowerMessage.includes('mother') || 
+                     lowerMessage.includes('akhil mother') || lowerMessage.includes('akhils mother') || 
+                     lowerMessage.includes("who is jyotsna") || lowerMessage.includes("tell me about jyotsna") || 
+                     lowerMessage.includes('mom') || lowerMessage.includes('akhils mom')) {
+                const jyotsnaResponses = [
+                    "Jyotsna is Akhil's mother! She's been a pillar of support in his journey of innovation and entrepreneurship! 💫",
+                    "That's Akhil's mom! She's always encouraged him to pursue his passion for technology and innovation! ✨",
+                    "Jyotsna is Akhil's mother, who's been incredibly supportive of his vision to make the world better through technology! 🌟"
+                ];
+                response = jyotsnaResponses[Math.floor(Math.random() * jyotsnaResponses.length)];
+            }
+            // Grandmother
+            else if (lowerMessage.includes('suseela') || lowerMessage.includes('grandmother') || 
+                     lowerMessage.includes('akhils grandmother') || lowerMessage.includes("who is suseela") || 
+                     lowerMessage.includes("tell me about suseela") || lowerMessage.includes('grandma')) {
+                const suseelaResponses = [
+                    "Suseela is Akhil's grandmother! She's been a wonderful source of support and encouragement! 💝",
+                    "That's Akhil's grandmother! She's part of the strong family support system behind Rujevo's success! ❤️",
+                    "Suseela is Akhil's grandmother, who's been incredibly supportive of his entrepreneurial journey! 🌟"
+                ];
+                response = suseelaResponses[Math.floor(Math.random() * suseelaResponses.length)];
+            }
+            // Grandfather
+            else if (lowerMessage.includes('sm rao') || lowerMessage.includes('smrao') || 
+                     lowerMessage.includes('grandfather') || lowerMessage.includes('akhils grandfather') || 
+                     lowerMessage.includes("who is sm rao") || lowerMessage.includes("tell me about sm rao") || 
+                     lowerMessage.includes('grandpa')) {
+                const smraoResponses = [
+                    "SM Rao is Akhil's grandfather! He's always pushed Akhil to create innovative solutions and think bigger! 🚀",
+                    "That's Akhil's grandfather! He's been instrumental in encouraging Akhil's innovative spirit and drive to create! ✨",
+                    "SM Rao is Akhil's grandfather, who's always inspired him to pursue innovation and create meaningful solutions! 💫"
+                ];
+                response = smraoResponses[Math.floor(Math.random() * smraoResponses.length)];
+            }
+            // Rujevo
+            else if (lowerMessage.includes('rujevo') || lowerMessage.includes('about rujevo') || 
+                     lowerMessage.includes('what is rujevo') || lowerMessage.includes('tell me about rujevo') || 
+                     lowerMessage.includes('company') || lowerMessage.includes('parent company') || 
+                     lowerMessage.includes('who owns workofy')) {
+                const rujevoResponses = [
+                    "Rujevo is dedicated to building products that solve real-world problems! We focus on ease of use, problem-solving, and AI, always ensuring we make the world a better place! 🚀",
+                    "At Rujevo, we drive innovation across industries while empowering individuals and businesses. We promote a happy work culture and ensure everything we do benefits humanity! ✨",
+                    "Rujevo is a tech company that believes in making a positive impact! We focus on AI and innovative solutions while maintaining a culture where everyone's happy and working towards making the world better! 💫",
+                    "What makes Rujevo special? We ensure that at the end of each day, the world becomes a better place because of our work! We're all about innovation with purpose! 🌟"
+                ];
+                response = rujevoResponses[Math.floor(Math.random() * rujevoResponses.length)];
+            }
+
+            else if (lowerMessage.includes('workofy.com') || lowerMessage.includes('workofy website')) {
+                addMessage('bot', "Taking you to Workofy's website! 🚀");
+                setTimeout(() => {
+                    window.open('https://www.workofy.com', '_blank');
+                }, 500);
+                return;
+            }
+            // Workofy
+            else if (lowerMessage.includes('workofy') || lowerMessage.includes('about workofy') || 
+                     lowerMessage.includes('what is workofy') || lowerMessage.includes('tell me about workofy') || 
+                     lowerMessage.includes('how to use workofy') || lowerMessage.includes('freelance') || 
+                     lowerMessage.includes('hire') || lowerMessage.includes('find work')) {
+                const workofyResponses = [
+                    "Workofy is where talent meets opportunity! We connect skilled professionals with clients who need their services, with strict quality standards to ensure the best experience! 🌟",
+                    "Workofy bridges the gap between talent and opportunity! We're not just a hiring platform - we're a marketplace where professionals can showcase their services and clients can find quality talent! ✨",
+                    "What makes Workofy special? We have strict moderation for approvals, ensuring clients get the highest quality services while talented professionals can showcase their skills! 💫",
+                    "Workofy solves a crucial problem: connecting talented professionals with clients who need their services. We ensure quality through strict moderation and high standards! 🚀"
+                ];
+                response = workofyResponses[Math.floor(Math.random() * workofyResponses.length)];
+            }
+            // Greetings - After specific checks
+            else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey') || 
+                     lowerMessage.includes('hola') || lowerMessage.includes('greetings') || 
+                     lowerMessage.includes('good morning') || lowerMessage.includes('good afternoon') || 
+                     lowerMessage.includes('good evening')) {
+                const greetings = [
+                    "Hello! How are you today? 👋",
+                    "Hi there! Nice to meet you! 😊",
+                    "Hey! How's your day going? 🌟"
+                ];
+                response = greetings[Math.floor(Math.random() * greetings.length)];
+            }
+            // How are you
+            else if (lowerMessage.includes('how are you') || lowerMessage.includes('how do you do') || 
+                     lowerMessage.includes('how are things') || lowerMessage.includes('how you doing')) {
+                const feelings = [
+                    "I'm doing well, thank you for asking! How about you? 😊",
+                    "I'm great! Thanks for checking! How are you? 🌟",
+                    "All good here! How's your day going? ✨"
+                ];
+                response = feelings[Math.floor(Math.random() * feelings.length)];
+            }
+            // Positive responses
+            else if (lowerMessage.includes('good') || lowerMessage.includes('great') || lowerMessage.includes('fine') || 
+                     lowerMessage.includes('amazing') || lowerMessage.includes('wonderful') || 
+                     lowerMessage.includes('fantastic')) {
+                const positiveResponses = [
+                    "That's wonderful to hear! 😊",
+                    "I'm glad things are going well! 🌟",
+                    "Fantastic! Keep that positive spirit! ✨"
+                ];
+                response = positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
+            }
+            // Goodbyes
+            else if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye') || 
+                     lowerMessage.includes('see you') || lowerMessage.includes('talk to you later') || 
+                     lowerMessage.includes('have to go')) {
+                const farewells = [
+                    "Goodbye! Have a great day! 👋",
+                    "Bye! Hope to chat again soon! ✨",
+                    "See you later! Take care! 🌟"
+                ];
+                response = farewells[Math.floor(Math.random() * farewells.length)];
+            }
+            // Name
+            else if (lowerMessage.includes('name') || lowerMessage.includes('who are you') || 
+                     lowerMessage.includes('what are you') || lowerMessage.includes('what should i call you')) {
+                response = "I'm Tree(3), a simple chatbot in development by Rujevo! No AI model yet, just pre-written responses for now! 🌱";
+            }
+            // Capabilities
+            else if (lowerMessage.includes('do you do') || lowerMessage.includes('what can you do') || 
+                     lowerMessage.includes('your purpose') || lowerMessage.includes('help me with') || 
+                     lowerMessage.includes('capable of')) {
+                response = "I'm a basic chatbot right now, but I'm learning! I can chat about simple things and tell you about Rujevo and Workofy! 🌱";
+            }
+            // Thanks
+            else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks') || 
+                     lowerMessage.includes('appreciate')) {
+                const thanks = [
+                    "You're welcome! 😊",
+                    "Anytime! 🌟",
+                    "My pleasure! ✨"
+                ];
+                response = thanks[Math.floor(Math.random() * thanks.length)];
+            }
+
+            else if (lowerMessage.includes('easter egg') || lowerMessage.includes('easteregg') || 
+         lowerMessage.includes('tree(3) meaning') || lowerMessage.includes('tree3 meaning') || 
+         lowerMessage.includes('tree 3 meaning') || lowerMessage.includes('what is tree 3') || 
+         lowerMessage.includes('what is tree(3)') || lowerMessage.includes('why tree 3') || 
+         lowerMessage.includes('why tree(3)')) {
+    const tree3res = [
+        "Ah, you found it! Tree(3) is a mind-bogglingly large number from mathematical tree theory. It's so large that it's beyond human comprehension! Try hovering over the title to see a hint! 🌳",
+        "You're curious about Tree(3)? It's a mathematical number so enormous that writing it in digits would take more space than the observable universe! Hover over the title for a little surprise! 🌲",
+        "Tree(3) is one of the largest numbers ever used in mathematical proof. It's our way of saying our ambitions are limitless! Check out what happens when you hover over the title! 🌱"
+    ];
+    response = tree3res[Math.floor(Math.random() * tree3res.length)];
+}
+
+
+            else if (lowerMessage.includes('back')) {
+                window.history.back(); // This will take the user to the previous page
+                return; // Stop here since we're navigating away
+            }
+
+            // Default response
+            else {
+                const defaultResponses = [
+                    "I'm still learning! Soon I'll be able to have better conversations! 🌱",
+                    "I'm a basic bot for now, but I'm growing! 🌱",
+                    "Still in training, but I'm getting better every day! 🌱"
+                ];
+                response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+            }
+    
+            setTimeout(() => addMessage('bot', response), 500);
+        }
+    
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+
+        function toggleTheme() {
+    const body = document.body;
+    const icon = document.querySelector('.theme-toggle i');
+    
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// Check for saved theme preference
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
+    }
+});
+    </script>
+
+</body>
+</html>
