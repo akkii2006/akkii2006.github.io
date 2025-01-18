@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoMind - Next Generation AI Moderation | Rujevo AI</title>
+    <link rel="stylesheet" href="evomind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="ai.html" class="logo">Rujevo AI</a>
+            <div class="nav-links">
+                <a href="ai.html#products">Products</a>
+                <a href="ai.html#innovation">Innovation</a>
+                <a href="ai.html#about">About</a>
+            </div>
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>EvoMind</h1>
+            <p class="subtitle">Intelligent moderation for the next generation</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">&gt;90%</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">&lt;100ms</span>
+                    <span class="stat-label">Response Time</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Fast</span>
+                    <span class="stat-label">Improving</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2>Powering Safer Communications</h2>
+        <p class="section-subtitle">Currently integrated with Workofy Messages</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Privacy Protection</h3>
+                <p>Automatically detects and prevents sharing of sensitive personal information</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Real-time Processing</h3>
+                <p>Efficient moderation system for message processing</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-brain"></i>
+                <h3>Smart Detection</h3>
+                <p>AI algorithms to identify potential threats and violations</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Scalable</h3>
+                <p>Built for consistent performance at scale</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="versions">
+        <h2>Evolution of EvoMind</h2>
+        <div class="version-timeline">
+            <div class="version-card">
+                <div class="version-badge">Current</div>
+                <h3>EvoMind 1.0</h3>
+                <p class="release-date">Released December 2024</p>
+                <ul class="version-features">
+                    <li>Basic privacy protection</li>
+                    <li>Personal information detection</li>
+                    <li>Workofy Messages integration</li>
+                    <li>Real-time moderation</li>
+                </ul>
+            </div>
+
+            <div class="version-card current">
+                <div class="version-badge">Just Launched</div>
+                <h3>EvoMind 1.1</h3>
+                <p class="release-date">January 2025</p>
+                <ul class="version-features">
+                    <li>Enhanced recognition system</li>
+                    <li>Improved processing speed</li>
+                    <li>Better pattern recognition</li>
+                    <li>Reduced false positives</li>
+                    <li>Advanced threat detection</li>
+                </ul>
+            </div>
+
+            <div class="version-card upcoming">
+                <div class="version-badge">Coming Soon</div>
+                <h3>EvoMind 2.0</h3>
+                <p class="release-date">Expected Q3 2025</p>
+                <ul class="version-features">
+                    <li>Context-aware analysis</li>
+                    <li>Multi-language support</li>
+                    <li>Developer API access</li>
+                    <li>Custom rule creation</li>
+                    <li>Advanced analytics dashboard</li>
+                    <li>Behavioral pattern recognition</li>
+                    <li>Integration webhooks</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="developer-preview">
+        <h2>Developer API Preview</h2>
+        <div class="code-preview">
+            <div class="code-tabs">
+                <button class="tab active" data-tab="python">Python</button>
+                <button class="tab" data-tab="javascript">JavaScript</button>
+                <button class="tab" data-tab="curl">curl</button>
+            </div>
+            <div class="code-content">
+                <pre class="code-block active" id="python-code">
+<code>
+import evomind
+
+# Initialize the client
+client = evomind.Client(api_key="your_api_key")
+
+# Check a message
+result = client.analyze_message(
+    content="Hello world!",
+    context="group_chat",
+    sensitivity="medium"
+)
+
+if result.is_safe:
+    print("Message is safe to send")
+else:
+    print("Detected issues:", result.issues)
+</code>
+                </pre>
+                <pre class="code-block" id="javascript-code">
+<code>
+const evomind = require('evomind');
+
+// Initialize the client
+const client = new evomind.Client({
+    apiKey: 'your_api_key'
+});
+
+// Check a message
+async function checkMessage() {
+    try {
+        const result = await client.analyzeMessage({
+            content: 'Hello world!',
+            context: 'group_chat',
+            sensitivity: 'medium'
+        });
+
+        if (result.isSafe) {
+            console.log('Message is safe to send');
+        } else {
+            console.log('Detected issues:', result.issues);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+checkMessage();
+</code>
+                </pre>
+                <pre class="code-block" id="curl-code">
+<code>
+curl -X POST https://api.evomind.ai/v1/analyze \
+  -H "Authorization: Bearer your_api_key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "content": "Hello world!",
+    "context": "group_chat",
+    "sensitivity": "medium"
+  }'
+</code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Evolve Your Platform?</h2>
+            <p>Join the waitlist for EvoMind 2.0 developer access</p>
+            <form class="waitlist-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Join Waitlist</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>EvoMind</h3>
+                <p>A Rujevo AI Product</p>
+                <p class="copyright">&copy; 2025 Rujevo. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Documentation</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuButton.classList.toggle('active');
+        });
+
+        // Code tabs functionality
+        const tabs = document.querySelectorAll('.tab');
+        const codeBlocks = document.querySelectorAll('.code-block');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and code blocks
+                tabs.forEach(t => t.classList.remove('active'));
+                codeBlocks.forEach(block => block.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding code block
+                tab.classList.add('active');
+                const codeId = `${tab.getAttribute('data-tab')}-code`;
+                document.getElementById(codeId).classList.add('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.nav-content') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenuButton.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
